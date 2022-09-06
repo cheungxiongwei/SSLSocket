@@ -45,7 +45,7 @@ SSLServer::SSLServer(QObject *parent)
 
 SSLServer::SSLServer(quint16 port, QObject *parent)
   : SSLServer(parent) {
-    qDebug("listen LocalHost:%d %s", port, listen(QHostAddress::Any, port) ? "succeed" : "failed");
+    qDebug("listen LocalHost:%d %s", port, listen(QHostAddress::LocalHost, port) ? "succeed" : "failed");
 }
 
 void SSLServer::incomingConnection(qintptr socketDescriptor) {
